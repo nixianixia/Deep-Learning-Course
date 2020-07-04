@@ -49,6 +49,7 @@ for i in range(0,learn_count+1):
 	mse_test.append(Loss_test)
 
 	dL_dW = tape.gradient(Loss_train,W)
+	print(type(dL_dW))
 	W.assign_sub(learn_rate*dL_dW)
 
 	if i % ds == 0:
